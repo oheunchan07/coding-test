@@ -17,7 +17,7 @@ public class Main {
 
         n = Integer.parseInt(br.readLine());
 
-        arr = new char[n+1][n+1];
+        arr = new char[n][n];
         visit = new boolean[n][n];
         for(int i = 0;i<n;i++) {
             String s = br.readLine();
@@ -62,7 +62,7 @@ public class Main {
         for(int i = 0;i<4;i++) {
             int nx = x + dx[i];
             int ny = y + dy[i];
-            if(!(nx < 0 || ny < 0 || nx > n || ny > n)) {
+            if(!(nx < 0 || ny < 0 || nx >= n || ny >= n)) {
                 if(arr[x][y] == arr[nx][ny] && !visit[nx][ny])
                     dfs(nx,ny);
             }
